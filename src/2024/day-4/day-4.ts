@@ -16,66 +16,51 @@ enum Direction {
 
 const sLetters = ["X", "M", "A", "S"];
 function checkDirection(dir: Direction, data: Array<string>, pos: number, col: number) : boolean {
-    let i = 0;
-    switch (dir) {
-        case Direction.UP:
-            for (i = 0; i < sLetters.length; i++) {
+    for (let i = 0; i < sLetters.length; i++) {
+        switch (dir) {
+            case Direction.UP:
                 if (sLetters[i] != data[col - i][pos]) {
                     return false;
                 }
-            }
-            break;
-        case Direction.UP_RIGHT:
-            for (i = 0; i < sLetters.length; i++) {
+                break;
+            case Direction.UP_RIGHT:
                 if (sLetters[i] != data[col - i][pos + i]) {
                     return false;
                 }
-            }
-            break;
-        case Direction.RIGHT:
-            for (i = 0; i < sLetters.length; i++) {
+                break;
+            case Direction.RIGHT:
                 if (sLetters[i] != data[col][pos + i]) {
                     return false;
                 }
-            }
-            break;
-        case Direction.DOWN_RIGHT:
-            for (i = 0; i < sLetters.length; i++) {
+                break;
+            case Direction.DOWN_RIGHT:
                 if (sLetters[i] != data[col + i][pos + i]) {
                     return false;
                 }
-            }
-            break;
-        case Direction.DOWN:
-            for (i = 0; i < sLetters.length; i++) {
+                break;
+            case Direction.DOWN:
                 if (sLetters[i] != data[col + i][pos]) {
                     return false;
                 }
-            }
-            break;
-        case Direction.DOWN_LEFT:
-            for (i = 0; i < sLetters.length; i++) {
+                break;
+            case Direction.DOWN_LEFT:
                 if (sLetters[i] != data[col + i][pos - i]) {
                     return false;
                 }
-            }
-            break;
-        case Direction.LEFT:
-            for (i = 0; i < sLetters.length; i++) {
+                break;
+            case Direction.LEFT:
                 if (sLetters[i] != data[col][pos - i]) {
                     return false;
                 }
-            }
-            break;
-        case Direction.UP_LEFT:
-            for (i = 0; i < sLetters.length; i++) {
+                break;
+            case Direction.UP_LEFT:
                 if (sLetters[i] != data[col - i][pos - i]) {
                     return false;
                 }
-            }
-            break;
-        default:
-            return false;
+                break;
+            default:
+                return false;
+        }
     }
 
     return true;

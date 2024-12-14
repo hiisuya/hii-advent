@@ -8,4 +8,4 @@ import { day4 } from './2024/day-4/day-4';
 // day1()
 // day2()
 // day3()
-// day4()
+day4()
